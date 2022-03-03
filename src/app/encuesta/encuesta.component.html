@@ -1,0 +1,23 @@
+<form (ngSubmit)="create(contactForm.value)" #contactForm="ngForm">
+<div class="container m-5 mx-auto px-5 col-md-10">
+  <div class="card text-center shadow-lg">
+    <div class="card-header mt-3 mb-3">
+      <h3>Selecciona el estilo de música que mas te guste !!</h3>
+    </div>
+    <div class="card-body px-5">
+      <select class="form-select" [(ngModel)]="clientes" name="musica" ngModel required>
+        <option selected>Selecciona una opción</option>
+        <option *ngFor="let estilos2 of estilos">{{estilos2.estilo}}</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group row mb-3 px-5">
+      <label for="correo" class="form-label">Email address</label>
+      <input type="text" class="form-control" id="correo" placeholder="name@example.com"  name="correo" ngModel required>
+    </div>
+    <div class="container">
+      <button  class="btn btn-primary custom my-3" role="button">Guardar</button><br>
+    </div>
+  </div>
+</div>
+</form>
