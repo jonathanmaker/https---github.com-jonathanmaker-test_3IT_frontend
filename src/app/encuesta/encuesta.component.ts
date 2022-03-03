@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Cliente } from '../clientes/cliente';
 import { ServiceService} from '../clientes/Service/service.service';
 import {Estilos} from '../clientes/estilos'
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-encuesta',
@@ -33,8 +34,15 @@ export class EncuestaComponent implements OnInit {
     console.log(values)
     this.service.crearPersona(values)
     .subscribe(data=>{
-      alert("se guardaron los cambios con exito");
-      this.router.navigate(["navbar"])
+      Swal.fire({
+        title: 'Perfecto ya puedes ver las estadisticas !!.',
+        width: 600,
+        padding: '3em',
+        color: '#716add',
+
+      })
+     // alert("se guardaron los cambios con exito");
+      this.router.navigate(["estadisticas"])
     })
   }
 

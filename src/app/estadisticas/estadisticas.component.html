@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="card">
+<div class="container py-5">
+  <div class="card body">
     <div class="card-header">
       <h3>Listado de personas</h3>
     </div>
@@ -13,13 +13,17 @@
           </tr>
         </thead>
         <Tbody>
-          <tr *ngFor="let cliente of clientes" class="text-center">
+          <tr *ngFor="let cliente of clientes | paginate: { itemsPerPage: 10, currentPage: paginaActual }" class="text-center">
             <td>{{cliente.id}}</td>
             <td>{{cliente.correo}}</td>
             <td>{{cliente.musica}}</td>
           </tr>
         </Tbody>
       </table>
+      <pagination-controls (pageChange)="paginaActual = $event"></pagination-controls>
+    </div>
+    <div class="container">
+      <a href="/navbar" class="btn btn-primary custom my-3">Regresar</a><br>
     </div>
   </div>
 </div>

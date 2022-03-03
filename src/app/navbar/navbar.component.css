@@ -5,3 +5,7 @@
 .custom {
   width: 320px !important;
 }
+
+.body {
+  background-color: rgb(204, 208, 231);
+}
